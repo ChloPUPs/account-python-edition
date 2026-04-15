@@ -13,9 +13,12 @@ class Account:
         self.logged_in = True
 
     def post(self, message: str) -> None:
+        import datetime
+        now = datetime.datetime.now()
+        time_str = now.strftime("%I:%M:%S %p") # I think %p is called "meridian" idk
         print("\nCreated new post!")
-        print(f"{self.display_name}: {message}")
-    
+        print(f"[{time_str}] {self.display_name}: {message}")
+
     def display_info(self) -> None:
         details_to_print = [
             f"\n\tUser Name: {self.user_name}",
